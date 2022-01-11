@@ -28,10 +28,9 @@ ImgBB::url($request->file('image'));
 
 To upload an image from URL, use the following command:
 
-````
+```
 ImgBB::url('https://i.ibb.co/SdHW3ch/chart-1641904891.png');
-``
-`
+```
 
 ### Response
 
@@ -74,4 +73,4 @@ After a successful upload, ImgBB returns a JSON response with the following fiel
   "success": true,
   "status": 200
 }
-````
+```
