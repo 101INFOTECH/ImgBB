@@ -1,15 +1,15 @@
 # ImgBB
 
-A simple package to upload your images to ImgBB server withour any fuss. Where 'ImgBB' is Free image hosting and sharing service, upload pictures, photo host that Offers integration solutions for uploading images to forums.
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/101infotech/imgbb.svg?style=flat-square)](https://github.com/101infotech/imgbb)
 [![Total Downloads](https://img.shields.io/packagist/dt/101infotech/imgbb.svg?style=flat-square)](https://packagist.org/packages/101infotech/imgbb)
+A simple package to upload your images to ImgBB server withour any fuss. Where 'ImgBB' is Free image hosting and sharing service, upload pictures, photo host that Offers integration solutions for uploading images to forums.
 
 ## Installation
 
 You can install the ImgBB via composer:
 
 ```
-composer require 101infotech/
+composer require 101infotech/imgbb
 ```
 
 ### Uploading images
