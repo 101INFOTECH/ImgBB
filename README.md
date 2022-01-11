@@ -17,7 +17,7 @@ composer require 101infotech/imgbb
 Use the following methods to upload your image to ImgBB:
 
 - Get API key from [ImgBB](https://api.imgbb.com)
-- Put your API key in the '.env' file in the root directory of the project
+- Put your API key in the '.env' file with 'IMGBB_API_KEY' variable
 - You are good to go!
 
 #### Upload image
