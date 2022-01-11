@@ -18,7 +18,7 @@ Use the following methods to upload your image to ImgBB:
 
 #### Upload image
 
-To upload an image to ImgBB, use the following method:
+To upload an image to ImgBB, use the following command:
 
 ```
 ImgBB::image($request->file('image'));
