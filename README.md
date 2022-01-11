@@ -8,19 +8,35 @@ A simple package to upload your images to ImgBB server withour any fuss. Where '
 
 You can install the ImgBB via composer:
 
-`composer require 101infotech/imgbb`
-
-
-## Usage
-`
-
+```
+composer require 101infotech/
+```
 
 ### Uploading images
 
+Use the following methods to upload your image to ImgBB:
 
+#### Upload image
+
+To upload an image to ImgBB, use the following method:
+
+```
+ImgBB::url($request->file('image'));
+```
+
+#### Upload Image URL
+
+To upload an image from URL, use the following command:
+
+````
+ImgBB::url('https://i.ibb.co/SdHW3ch/chart-1641904891.png');
+``
+`
 
 ### Response
+
 After a successful upload, ImgBB returns a JSON response with the following fields:
+
 ```json
 {
   "data": {
@@ -31,31 +47,31 @@ After a successful upload, ImgBB returns a JSON response with the following fiel
     "display_url": "https://i.ibb.co/98W13PY/c1f64245afb2.gif",
     "size": "42",
     "time": "1552042565",
-    "expiration":"0",
+    "expiration": "0",
     "image": {
       "filename": "c1f64245afb2.gif",
       "name": "c1f64245afb2",
       "mime": "image/gif",
       "extension": "gif",
-      "url": "https://i.ibb.co/w04Prt6/c1f64245afb2.gif",
+      "url": "https://i.ibb.co/w04Prt6/c1f64245afb2.gif"
     },
     "thumb": {
       "filename": "c1f64245afb2.gif",
       "name": "c1f64245afb2",
       "mime": "image/gif",
       "extension": "gif",
-      "url": "https://i.ibb.co/2ndCYJK/c1f64245afb2.gif",
+      "url": "https://i.ibb.co/2ndCYJK/c1f64245afb2.gif"
     },
     "medium": {
       "filename": "c1f64245afb2.gif",
       "name": "c1f64245afb2",
       "mime": "image/gif",
       "extension": "gif",
-      "url": "https://i.ibb.co/98W13PY/c1f64245afb2.gif",
+      "url": "https://i.ibb.co/98W13PY/c1f64245afb2.gif"
     },
     "delete_url": "https://ibb.co/2ndCYJK/670a7e48ddcb85ac340c717a41047e5c"
   },
   "success": true,
   "status": 200
 }
-```
+````
