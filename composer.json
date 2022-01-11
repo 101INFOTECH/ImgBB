@@ -1,0 +1,26 @@
+{
+    "name": "101infotech/imgbb",
+    "description": "Simple Way to upload image using imgbb api without any fuss.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "101infotech",
+            "email": "help@101infotech.com.np"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Infotech\\ImgBB\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Infotech\\ImgBB\\ImgBBServiceProvider"
+            ]
+        }
+    }
+}
