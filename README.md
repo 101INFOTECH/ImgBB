@@ -89,6 +89,6 @@ After a successful upload, ImgBB returns a JSON response with the following fiel
 
 ### Change Log
 
-v1.0.0: Initial release.
-v1.0.1: Added image 'name' and 'expiration'.
+v1.0.0: Initial release.  
+v1.0.1: Added image 'name' and 'expiration'.  
 v1.1.0: Added publishable config file.
