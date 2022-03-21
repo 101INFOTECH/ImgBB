@@ -6,6 +6,20 @@ use Illuminate\Support\Facades\Http;
 
 class ImgBB
 {
+    private function uploadImage(String $imageStr, String $name = null, INT $expiration = 0){
+        $response = Http::asForm()->post(
+            'https://api.imgbb.com/1/upload',
+            [
+                'key' => config('ImgBB.IMGBB_API_KEY'),
+                'image' => $imageStr,
+                'name' => $name,
+                'expiration' => $expiration,
+            ]
+        );
+        
+        return $response->json();
+    }
+    
     public static function image(Object $image, String $name = null, INT $expiration = 0)
     {
         if ($name == null) {
@@ -14,18 +28,8 @@ class ImgBB
         }
 
         $image = base64_encode(file_get_contents($image->path()));
-
-        $response = Http::asForm()->post(
-            'https://api.imgbb.com/1/upload',
-            [
-                'key' => config('ImgBB.IMGBB_API_KEY'),
-                'image' => $image,
-                'name' => $name,
-                'expiration' => $expiration,
-            ]
-        );
-
-        return $response->json();
+        
+        return self::uploadImage($image, $name, $expiration);
     }
 
     public static function url(String $url, String $name = null, INT $expiration = 0)
@@ -40,16 +44,6 @@ class ImgBB
             $name = config('app.name') . "_" . time();
         }
 
-        $response = Http::asForm()->post(
-            'https://api.imgbb.com/1/upload',
-            [
-                'key' => config('ImgBB.IMGBB_API_KEY'),
-                'image' => $url,
-                'name' => $name,
-                'expiration' => $expiration,
-            ]
-        );
-
-        return $response->json();
+        return self::uploadImage($url, $name, $expiration);
     }
 }
