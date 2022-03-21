@@ -32,7 +32,8 @@ To upload an image to ImgBB, use the following command:
 ImgBB::image($request->file('image'), 'image_name', expiration_in_seconds);
 ```
 
-Datatypes Object $image, String image_name, Int expiration_in_seconds. Remember 'image_name' and 'expiration_in_seconds' are optional.
+Datatypes Object $image, String image_name, Int expiration_in_seconds.  
+Remember 'image_name' and 'expiration_in_seconds' are optional.
 
 #### Upload Image URL
 
@@ -42,7 +43,8 @@ To upload an image from URL, use the following command:
 ImgBB::url('https://i.ibb.co/SdHW3ch/chart-1641904891.png', 'image_name', expiration_in_seconds);
 ```
 
-Datatypes String image_url, String image_name, Int expiration_in_seconds. Remember 'image_name' and 'expiration_in_seconds' are optional.
+Datatypes String image_url, String image_name, Int expiration_in_seconds.  
+Remember 'image_name' and 'expiration_in_seconds' are optional.
 
 ### Response
 
