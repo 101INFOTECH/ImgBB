@@ -7,13 +7,15 @@ use Infotech\ImgBB\ImgBB;
 
 class ImgBBServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-    }
-
     public function boot()
     {
-        $this->app->singleton('ImgBBAPI', function ($app) {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/ImgBB.php' => config_path('ImgBB.php'),
+            ], 'ImgBB');
+        }
+
+        $this->app->singleton('ImgBBAPI', function () {
             return new ImgBB;
         });
     }
