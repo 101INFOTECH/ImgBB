@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class ImgBB
 {
-    private function uploadImage(String $imageStr, String $name = null, INT $expiration = 0){
+    private static function uploadImage(String $imageStr, String $name = null, INT $expiration = 0){
         $response = Http::asForm()->post(
             'https://api.imgbb.com/1/upload',
             [
