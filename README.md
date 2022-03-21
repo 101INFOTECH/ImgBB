@@ -10,6 +10,12 @@ You can install the ImgBB via composer:
 composer require 101infotech/imgbb
 ```
 
+Then publish the config file using:
+
+```
+php artisan vendor:publish  --tag="ImgBB"
+```
+
 ### Uploading images
 
 Use the following methods to upload your image to ImgBB:
@@ -23,16 +29,20 @@ Use the following methods to upload your image to ImgBB:
 To upload an image to ImgBB, use the following command:
 
 ```
-ImgBB::image($request->file('image'));
+ImgBB::image($request->file('image'), 'image_name', expiration_in_seconds);
 ```
+
+Datatypes Object $image, String image_name, Int expiration_in_seconds. Remember 'image_name' and 'expiration_in_seconds' are optional.
 
 #### Upload Image URL
 
 To upload an image from URL, use the following command:
 
 ```
-ImgBB::url('https://i.ibb.co/SdHW3ch/chart-1641904891.png');
+ImgBB::url('https://i.ibb.co/SdHW3ch/chart-1641904891.png', 'image_name', expiration_in_seconds);
 ```
+
+Datatypes String image_url, String image_name, Int expiration_in_seconds. Remember 'image_name' and 'expiration_in_seconds' are optional.
 
 ### Response
 
@@ -76,3 +86,9 @@ After a successful upload, ImgBB returns a JSON response with the following fiel
   "status": 200
 }
 ```
+
+### Change Log
+
+v1.0.0: Initial release.
+v1.0.1: Added image 'name' and 'expiration'.
+v1.1.0: Added publishable config file.

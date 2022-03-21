@@ -6,25 +6,29 @@ use Illuminate\Support\Facades\Http;
 
 class ImgBB
 {
-    public static function image(Object $image)
+    public static function image(Object $image, String $name = null, INT $expiration = 0)
     {
-        $fullname = $image->getClientOriginalName();
-        $name = pathinfo($fullname, PATHINFO_FILENAME) . "_" . time();
+        if ($name == null) {
+            $fullname = $image->getClientOriginalName();
+            $name = pathinfo($fullname, PATHINFO_FILENAME) . "_" . time();
+        }
+
         $image = base64_encode(file_get_contents($image->path()));
 
         $response = Http::asForm()->post(
             'https://api.imgbb.com/1/upload',
             [
-                'key' => env('IMGBB_API_KEY'),
+                'key' => config('ImgBB.IMGBB_API_KEY'),
                 'image' => $image,
                 'name' => $name,
+                'expiration' => $expiration,
             ]
         );
 
         return $response->json();
     }
 
-    public static function url(String $url)
+    public static function url(String $url, String $name = null, INT $expiration = 0)
     {
         if (filter_var($url, FILTER_VALIDATE_URL) == false) {
             return [
@@ -32,12 +36,17 @@ class ImgBB
             ];
         }
 
+        if ($name == null) {
+            $name = config('app.name') . "_" . time();
+        }
+
         $response = Http::asForm()->post(
             'https://api.imgbb.com/1/upload',
             [
-                'key' => env('IMGBB_API_KEY'),
+                'key' => config('ImgBB.IMGBB_API_KEY'),
                 'image' => $url,
-                'name' => env('APP_NAME') . "_" . time(),
+                'name' => $name,
+                'expiration' => $expiration,
             ]
         );
 
