@@ -1,6 +1,6 @@
 # ImgBB
 
-A simple package to upload your images to ImgBB server withour any fuss. Where 'ImgBB' is Free image hosting and sharing service, upload pictures, photo host that Offers integration solutions for uploading images to forums.
+A simple package to upload your images to the ImgBB server without any fuss. Where 'ImgBB' is a Free image hosting and sharing service, upload pictures, photo host that Offers integration solutions for uploading images to forums.
 
 ## Installation
 
